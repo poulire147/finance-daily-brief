@@ -47,7 +47,7 @@ def analyze(items: list[dict], cfg: dict, prompt_text: str) -> dict:
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.3,
-            "maxOutputTokens": 16384,
+            "maxOutputTokens": 65536,
             "responseMimeType": "application/json",
         },
     }
