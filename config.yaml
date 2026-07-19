@@ -4,7 +4,7 @@
 # ============================================================
 
 # ---------- AI 模型 ----------
-model: "gemini-2.5-flash"        # 想升級品質可改 gemini-2.5-pro（注意付費層）
+model: "gemini-2.5-pro"        # 想升級品質可改 gemini-2.5-pro（注意付費層）
 max_items_to_ai: 120             # 送給 AI 判斷的新聞上限（依標題時間排序取最新）
 
 # ---------- 新聞來源 ----------
@@ -77,12 +77,12 @@ hours_lookback: 26               # 只取最近 N 小時的新聞（26 = 涵蓋�
 # ---------- 關鍵字層（命中即標必讀，你說了算）----------
 must_read_keywords:
   - 上銀
-  - 達明
-  - 新代
-  - 所羅門
-  - 機器人
-  - robotics
-  - humanoid
+  - 南亞科
+  - 記憶體
+  - Dram
+  - 美光
+  - 海力士
+  - Samsung
   - 台積電
   - TSMC
   - 聯準會
@@ -93,13 +93,15 @@ must_read_keywords:
   - 升息
   - 台指期
   - 期貨商
+  - Hynix
+  - 三星
 
 # ---------- 熱度層（跨來源重複度）----------
 hot_source_threshold: 3          # 同一事件被 N 家以上來源報導 → 自動升級
 
 # ---------- 推播 ----------
 telegram_top_n: 5                # Telegram 推播前 N 則必讀
-site_url: ""                     # 部署後填入 GitHub Pages 網址，推播訊息會附上連結
+site_url: "https://poulire147.github.io/finance-daily-brief/"                     # 部署後填入 GitHub Pages 網址，推播訊息會附上連結
 
 # ---------- 翻譯用語偏好（會注入 AI prompt）----------
 terminology:
