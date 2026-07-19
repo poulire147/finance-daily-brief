@@ -5,7 +5,7 @@
 
 # ---------- AI 模型 ----------
 model: "gemini-2.5-flash"        # 想升級品質可改 gemini-2.5-pro（注意付費層）
-max_items_to_ai: 120             # 送給 AI 判斷的新聞上限（依標題時間排序取最新）
+max_items_to_ai: 200             # 送給 AI 判斷的新聞上限（依標題時間排序取最新）
 
 # ---------- 新聞來源 ----------
 # type: rss  = 直接抓 RSS
@@ -13,8 +13,8 @@ max_items_to_ai: 120             # 送給 AI 判斷的新聞上限（依標題�
 sources:
   # --- 台灣（5）---
   - name: 鉅亨網台股
-    type: rss
-    url: https://news.cnyes.com/rss/cat/tw_stock
+    type: gnews
+    query: "site:cnyes.com 台股"
     lang: zh
   - name: 經濟日報
     type: rss
@@ -37,10 +37,6 @@ sources:
   - name: CNBC Markets
     type: rss
     url: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258
-    lang: en
-  - name: CNBC Economy
-    type: rss
-    url: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910255
     lang: en
   - name: MarketWatch
     type: rss
@@ -68,7 +64,7 @@ sources:
     lang: en
   - name: Nikkei Asia (via Google News)
     type: gnews
-    query: "site:asia.nikkei.com business OR economy OR taiwan"
+    query:  "site:asia.nikkei.com"
     lang: en
 
 # ---------- 抓取範圍 ----------
