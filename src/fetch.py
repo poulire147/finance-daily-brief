@@ -10,7 +10,7 @@ import feedparser
 
 GNEWS_TEMPLATE = (
     "https://news.google.com/rss/search?q={query}"
-    "&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    "&hl={hl}&gl={gl}&ceid={ceid}"
 )
 
 UA = "Mozilla/5.0 (compatible; DailyBriefBot/1.0)"
@@ -18,8 +18,12 @@ UA = "Mozilla/5.0 (compatible; DailyBriefBot/1.0)"
 
 def _source_url(src: dict) -> str:
     if src.get("type") == "gnews":
-        q = urllib.parse.quote(src["query"])
-        return GNEWS_TEMPLATE.format(query=q)
+        q = urllib.parse.quote(src["query"] + " when:1d")
+        if src.get("lang") == "zh":
+            return GNEWS_TEMPLATE.format(query=q, hl="zh-TW",
+                                         gl="TW", ceid="TW:zh-Hant")
+        return GNEWS_TEMPLATE.format(query=q, hl="en-US",
+                                     gl="US", ceid="US:en")
     return src["url"]
 
 
