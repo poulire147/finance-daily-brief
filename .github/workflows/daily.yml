@@ -2,7 +2,7 @@ name: Daily Finance Brief
 
 on:
   schedule:
-    - cron: "30 22 * * *"   # UTC 22:30 = 台北時間 06:30
+    - cron: "3 21 * * *"   # UTC 22:30 = 台北時間 06:30
   workflow_dispatch:          # 允許手動觸發（測試用）
 
 permissions:
